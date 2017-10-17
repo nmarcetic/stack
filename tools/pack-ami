@@ -129,7 +129,7 @@ def get_parent_templates(template):
     return parents
 
 def get_account_id():
-    iam = boto3.client('iam')
+    iam = boto3.client('iam', region_name="us-west-2")
     users = iam.list_users()['Users']
     roles = iam.list_roles()['Roles']
 
